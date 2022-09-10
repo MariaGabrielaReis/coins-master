@@ -15,3 +15,8 @@ export const Subtitle = styled.Text`
   font: ${({ theme }) => theme.fonts.subtitle};
   color: ${({ theme }) => theme.colors.black};
 `;
+
+export const Navbar = styled.Text`
+  font: ${({ theme }) => theme.fonts.navbar};
+  color: ${({ theme }) => theme.colors.black};
+`;

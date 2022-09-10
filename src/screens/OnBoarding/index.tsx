@@ -4,8 +4,10 @@ import Icon from "react-native-vector-icons/AntDesign";
 import { Container, StartButton } from "./styles";
 import { Title, Subtitle } from "@components/texts";
 import { Illustration } from "@components/illustrations";
+import { useNavigation } from "@react-navigation/native";
 
 export default function OnBoarding() {
+  const navigation = useNavigation();
   return (
     <Container>
       <Illustration source={require("@assets/onboarding-illustration.png")} />
@@ -19,7 +21,7 @@ export default function OnBoarding() {
           name="arrowright"
           size={32}
           color={"#000"}
-          onPress={() => console.log("foi")}
+          onPress={() => navigation.navigate("TeamOptions")}
         />
       </StartButton>
     </Container>

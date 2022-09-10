@@ -2,13 +2,14 @@ import styled from "styled-components/native";
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  padding: 64px 32px;
-  justify-content: flex-end;
+  padding: 0px 32px;
+  justify-content: center;
   align-items: center;
+
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 export const StartButton = styled.View`
-  margin-top: ${({ theme }) => theme.spacing.xl};
   display: flex;
   justify-content: center;
   align-items: center;

@@ -9,6 +9,7 @@ export const Title = styled.Text`
 `;
 
 export const Subtitle = styled.Text`
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
   text-align: center;
 
   font: ${({ theme }) => theme.fonts.subtitle};

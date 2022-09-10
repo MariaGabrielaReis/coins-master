@@ -7,25 +7,6 @@ export const Container = styled.SafeAreaView`
   align-items: center;
 `;
 
-export const Illustration = styled.Image`
-  margin-bottom: ${({ theme }) => theme.spacing.xxl};
-`;
-
-export const Title = styled.Text`
-  margin-bottom: ${({ theme }) => theme.spacing.sm};
-  text-align: center;
-
-  font: ${({ theme }) => theme.fonts.title};
-  color: ${({ theme }) => theme.colors.black};
-`;
-
-export const Subtitle = styled.Text`
-  text-align: center;
-
-  font: ${({ theme }) => theme.fonts.subtitle};
-  color: ${({ theme }) => theme.colors.black};
-`;
-
 export const StartButton = styled.View`
   margin-top: ${({ theme }) => theme.spacing.xl};
   display: flex;

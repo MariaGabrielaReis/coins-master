@@ -1,20 +1,14 @@
 import React from "react";
 import Icon from "react-native-vector-icons/AntDesign";
 
-import {
-  Container,
-  Illustration,
-  Title,
-  Subtitle,
-  StartButton,
-} from "./styles";
+import { Container, StartButton } from "./styles";
+import { Title, Subtitle } from "@components/texts";
+import { Illustration } from "@components/illustrations";
 
 export default function OnBoarding() {
   return (
     <Container>
-      <Illustration
-        source={require("../../assets/onboarding-illustration.png")}
-      />
+      <Illustration source={require("@assets/onboarding-illustration.png")} />
       <Title>Uma forma fácil de {"\n"} distribuir moedas do API</Title>
       <Subtitle>
         Agora você pode avaliar e ser {"\n"} avaliado de maneira simples e

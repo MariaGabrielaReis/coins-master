@@ -4,6 +4,13 @@
     /* Completeness */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
 
-    "types": ["@types/styled-components-react-native"]
+    "types": ["@types/styled-components-react-native"],
+
+    "baseUrl": "./",
+    "paths": {
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@screens/*": ["./src/screens/*"]
+    }
   }
 }

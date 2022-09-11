@@ -21,9 +21,9 @@ export default {
     text: "400 14px/29px sans-serif",
     navbar: "600 18px/24px sans-serif",
     navbarLink: "600 12px/24px sans-serif",
-    cardTitle: "500 16px/9px sans-serif",
-    cardSubtitle: "400 12px/9px sans-serif",
-    hability: "400 16px/9px sans-serif",
+    cardTitle: "500 16px/16px sans-serif",
+    cardSubtitle: "400 12px/12px sans-serif",
+    hability: "400 16px/12px sans-serif",
   },
   spacing: {
     xxs: "4px",

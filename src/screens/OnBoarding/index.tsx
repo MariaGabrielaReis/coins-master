@@ -5,9 +5,11 @@ import { Container, StartButton } from "./styles";
 import { Title, Subtitle } from "@components/texts";
 import { Illustration } from "@components/illustrations";
 import { useNavigation } from "@react-navigation/native";
+import theme from "@global/styles/theme";
 
 export default function OnBoarding() {
   const navigation = useNavigation();
+
   return (
     <Container>
       <Illustration
@@ -22,7 +24,7 @@ export default function OnBoarding() {
         <Icon
           name="arrowright"
           size={32}
-          color={"#000"}
+          color={theme.colors.black}
           onPress={() => navigation.navigate("TeamOptions")}
         />
       </StartButton>

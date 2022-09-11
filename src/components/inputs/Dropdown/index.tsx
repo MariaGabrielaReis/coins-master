@@ -1,6 +1,7 @@
 import React from "react";
 import { SelectProps } from "../InputProps";
-import { Label, DropdownContainer } from "./styles";
+import { Label } from "@components/texts";
+import { DropdownContainer } from "./styles";
 
 export function Dropdown({
   label,

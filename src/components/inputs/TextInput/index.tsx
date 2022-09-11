@@ -1,6 +1,7 @@
 import React from "react";
 import { InputProps } from "../InputProps";
-import { Label, Input, SupportText } from "./styles";
+import { Label } from "@components/texts";
+import { Container, Input, SupportText } from "./styles";
 
 export function TextInput({
   label,
@@ -10,9 +11,10 @@ export function TextInput({
   keyboardType = "text",
   value,
   onChange,
+  hasMarginRight = false,
 }: InputProps) {
   return (
-    <>
+    <Container hasMarginRight={hasMarginRight}>
       <Label>{label}</Label>
       <Input
         value={value}
@@ -23,6 +25,6 @@ export function TextInput({
         hasSupportText={supportText?.length > 0}
       />
       {supportText?.length > 0 && <SupportText>{supportText}</SupportText>}
-    </>
+    </Container>
   );
 }

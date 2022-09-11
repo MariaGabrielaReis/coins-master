@@ -23,3 +23,9 @@ export const Navbar = styled.Text`
   font: ${({ theme }) => theme.fonts.navbar};
   color: ${({ theme }) => theme.colors.black};
 `;
+
+export const Label = styled.Text`
+  margin-bottom: ${({ theme }) => theme.spacing.xs}
+  font: ${({ theme }) => theme.fonts.text};
+  color: ${({ theme }) => theme.colors.black};
+`;

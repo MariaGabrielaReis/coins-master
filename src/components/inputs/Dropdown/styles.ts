@@ -1,11 +1,6 @@
 import styled from "styled-components/native";
 import DropDownPicker from "react-native-dropdown-picker";
 
-export const Label = styled.Text`
-  margin-bottom: ${({ theme }) => theme.spacing.xs}
-  font: ${({ theme }) => theme.fonts.text};
-`;
-
 export const DropdownContainer = styled(DropDownPicker)<{
   isDisabled: boolean;
   hasSmallSpacing: boolean;

@@ -1,8 +1,12 @@
 import styled from "styled-components/native";
 
-export const Label = styled.Text`
-  margin-bottom: ${({ theme }) => theme.spacing.xs}
-  font: ${({ theme }) => theme.fonts.text};
+export const Container = styled.View<{ hasMarginRight: boolean }>`
+  display: flex;
+  flex-direction: column;
+  ${({ hasMarginRight }) => hasMarginRight && "width:60%"};
+
+  margin-right: ${({ hasMarginRight, theme }) =>
+    hasMarginRight ? theme.spacing.xs : "0px"};
 `;
 
 export const Input = styled.TextInput<{
@@ -17,7 +21,8 @@ export const Input = styled.TextInput<{
 
   border-radius: ${({ theme }) => theme.borderRadius.md};
   border-width: 0.5px;
-  border-color: ${({ theme }) => theme.colors.gray};
+  border-color: ${({ isDisabled, theme }) =>
+    isDisabled ? theme.colors.graySupport : theme.colors.gray};
 
   font: ${({ theme }) => theme.fonts.button};
   color: ${({ isDisabled, theme }) =>

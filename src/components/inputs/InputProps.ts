@@ -1,11 +1,12 @@
 export type InputProps = {
   label: string;
-  placeholder: string;
+  placeholder?: string;
   supportText?: string;
   isDisabled?: boolean;
   keyboardType?: "numeric" | "text";
   value: string;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
+  hasMarginRight?: boolean;
 };
 
 export type SelectProps = {

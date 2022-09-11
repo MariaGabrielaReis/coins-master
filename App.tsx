@@ -12,6 +12,7 @@ import CreateTeam from "@screens/CreateTeam";
 import Sorry from "@screens/Sorry";
 import Login from "@screens/Login";
 import AddCoins from "@screens/AddCoins";
+import BlockCoinsDistribution from "@screens/BlockCoinsDistribution";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -61,6 +62,14 @@ export default function App() {
             options={{
               title: "",
               headerRight: () => <Navbar>Adição de moedas</Navbar>,
+            }}
+          />
+          <Stack.Screen
+            name="BlockCoinsDistribution"
+            component={BlockCoinsDistribution}
+            options={{
+              title: "",
+              headerRight: () => <Navbar>Distribuição de moedas</Navbar>,
             }}
           />
 

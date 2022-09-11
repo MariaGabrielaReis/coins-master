@@ -8,6 +8,8 @@ module.exports = {
         alias: {
           "@assets": "./src/assets",
           "@components": "./src/components",
+          "@global": "./src/global",
+          "@mocks": "./src/mocks",
           "@screens": "./src/screens",
         },
       },

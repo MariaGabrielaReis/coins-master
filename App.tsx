@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import theme from "./src/global/styles/theme";
 import { ThemeProvider } from "styled-components";
 import { Navbar } from "@components/texts";
+import Icon from "react-native-vector-icons/AntDesign";
 
 import OnBoarding from "@screens/OnBoarding";
 import TeamOptions from "@screens/TeamOptions";
@@ -14,6 +15,7 @@ import Login from "@screens/Login";
 import AddCoins from "@screens/AddCoins";
 import BlockCoinsDistribution from "@screens/BlockCoinsDistribution";
 import DeleteTeam from "@screens/DeleteTeam";
+import Home from "@screens/Home";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -54,6 +56,22 @@ export default function App() {
             options={{
               title: "",
               headerRight: () => <Navbar>Login</Navbar>,
+            }}
+          />
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{
+              title: "Equipe",
+              headerBackVisible: false,
+              headerRight: () => (
+                <Icon
+                  name="setting"
+                  size={24}
+                  color={theme.colors.black}
+                  // onPress={() => navigation.navigate("Home")}
+                />
+              ),
             }}
           />
 

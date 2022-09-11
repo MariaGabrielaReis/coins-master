@@ -20,7 +20,7 @@ export default function Login() {
       />
       <BlackButton
         label={"CONTINUAR"}
-        onClick={() => navigation.navigate("Login")}
+        onClick={() => navigation.navigate("Home")}
       />
     </Container>
   );

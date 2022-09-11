@@ -58,7 +58,7 @@ export default function App() {
             options={{
               title: "",
               headerRight: () => (
-                <Navbar style={{ marginRight: 8 }}>Login</Navbar>
+                <Navbar style={{ marginRight: 14 }}>Login</Navbar>
               ),
             }}
           />

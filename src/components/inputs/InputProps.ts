@@ -16,6 +16,7 @@ export type SelectProps = {
   value: string;
   setOpen: (value: boolean) => void;
   setValue: (value: string) => void;
+  hasSmallSpacing?: boolean;
 };
 
 export type OptionProps = {

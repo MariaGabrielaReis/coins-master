@@ -10,6 +10,7 @@ export function Dropdown({
   value,
   setOpen,
   setValue,
+  hasSmallSpacing = false,
 }: SelectProps) {
   return (
     <>
@@ -21,6 +22,7 @@ export function Dropdown({
         setOpen={() => setOpen}
         setValue={() => setValue}
         isDisabled={isDisabled}
+        hasSmallSpacing={hasSmallSpacing}
       />
     </>
   );

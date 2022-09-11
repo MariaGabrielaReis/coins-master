@@ -8,11 +8,13 @@ export const Label = styled.Text`
 
 export const DropdownContainer = styled(DropDownPicker)<{
   isDisabled: boolean;
+  hasSmallSpacing: boolean;
 }>`
   width: 100%;
   height: 48px;
   padding: 0px 16px;
-  margin-bottom: ${({ theme }) => theme.spacing.lg}
+  margin-bottom: ${({ hasSmallSpacing, theme }) =>
+    hasSmallSpacing ? theme.spacing.sm : theme.spacing.lg}
 
   border-radius: ${({ theme }) => theme.borderRadius.md};
   border-width: 0.5px;

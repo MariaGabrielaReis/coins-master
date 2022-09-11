@@ -4,14 +4,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import theme from "./src/global/styles/theme";
 import { ThemeProvider } from "styled-components";
+import { Navbar } from "@components/texts";
 
 import OnBoarding from "@screens/OnBoarding";
 import TeamOptions from "@screens/TeamOptions";
 import CreateTeam from "@screens/CreateTeam";
 import Sorry from "@screens/Sorry";
 import Login from "@screens/Login";
-import { Text } from "react-native";
-import { Navbar } from "@components/texts";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -23,14 +22,10 @@ export default function App() {
           initialRouteName="OnBoarding"
           screenOptions={{
             headerShadowVisible: false,
-
             headerStyle: {
-              backgroundColor: "#fff",
+              backgroundColor: theme.colors.white,
             },
-            headerTintColor: "#222",
-            headerTitleStyle: {
-              fontWeight: "600",
-            },
+            headerTintColor: theme.colors.black,
           }}>
           <Stack.Screen
             name="OnBoarding"

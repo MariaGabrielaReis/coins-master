@@ -9,6 +9,9 @@ import OnBoarding from "@screens/OnBoarding";
 import TeamOptions from "@screens/TeamOptions";
 import CreateTeam from "@screens/CreateTeam";
 import Sorry from "@screens/Sorry";
+import Login from "@screens/Login";
+import { Text } from "react-native";
+import { Navbar } from "@components/texts";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -16,12 +19,55 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="OnBoarding">
-          <Stack.Screen name="OnBoarding" component={OnBoarding} />
-          <Stack.Screen name="TeamOptions" component={TeamOptions} />
-          <Stack.Screen name="CreateTeam" component={CreateTeam} />
+        <Stack.Navigator
+          initialRouteName="OnBoarding"
+          screenOptions={{
+            headerShadowVisible: false,
 
-          <Stack.Screen name="Sorry" component={Sorry} />
+            headerStyle: {
+              backgroundColor: "#fff",
+            },
+            headerTintColor: "#222",
+            headerTitleStyle: {
+              fontWeight: "600",
+            },
+          }}>
+          <Stack.Screen
+            name="OnBoarding"
+            component={OnBoarding}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="TeamOptions"
+            component={TeamOptions}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CreateTeam"
+            component={CreateTeam}
+            options={{
+              title: "",
+              headerRight: () => (
+                <Navbar style={{ marginRight: 8 }}>Cadastre sua equipe</Navbar>
+              ),
+            }}
+          />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{
+              title: "",
+              headerRight: () => (
+                <Navbar style={{ marginRight: 8 }}>Login</Navbar>
+              ),
+            }}
+          />
+
+          <Stack.Screen
+            name="Sorry"
+            component={Sorry}
+            options={{ title: "" }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

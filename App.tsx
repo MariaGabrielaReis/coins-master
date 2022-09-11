@@ -13,6 +13,7 @@ import Sorry from "@screens/Sorry";
 import Login from "@screens/Login";
 import AddCoins from "@screens/AddCoins";
 import BlockCoinsDistribution from "@screens/BlockCoinsDistribution";
+import DeleteTeam from "@screens/DeleteTeam";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -53,6 +54,15 @@ export default function App() {
             options={{
               title: "",
               headerRight: () => <Navbar>Login</Navbar>,
+            }}
+          />
+
+          <Stack.Screen
+            name="DeleteTeam"
+            component={DeleteTeam}
+            options={{
+              title: "",
+              headerRight: () => <Navbar>Deletar equipe</Navbar>,
             }}
           />
 

@@ -14,6 +14,4 @@ export const Content = styled.View`
   justify-content: center;
   align-items: center;
   width: 100%;
-
-  background-color: ${({ theme }) => theme.colors.white};
 `;

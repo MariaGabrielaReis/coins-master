@@ -11,6 +11,7 @@ import TeamOptions from "@screens/TeamOptions";
 import CreateTeam from "@screens/CreateTeam";
 import Sorry from "@screens/Sorry";
 import Login from "@screens/Login";
+import AddCoins from "@screens/AddCoins";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -42,9 +43,7 @@ export default function App() {
             component={CreateTeam}
             options={{
               title: "",
-              headerRight: () => (
-                <Navbar style={{ marginRight: 8 }}>Cadastre sua equipe</Navbar>
-              ),
+              headerRight: () => <Navbar>Cadastre sua equipe</Navbar>,
             }}
           />
           <Stack.Screen
@@ -52,9 +51,16 @@ export default function App() {
             component={Login}
             options={{
               title: "",
-              headerRight: () => (
-                <Navbar style={{ marginRight: 14 }}>Login</Navbar>
-              ),
+              headerRight: () => <Navbar>Login</Navbar>,
+            }}
+          />
+
+          <Stack.Screen
+            name="AddCoins"
+            component={AddCoins}
+            options={{
+              title: "",
+              headerRight: () => <Navbar>Adição de moedas</Navbar>,
             }}
           />
 

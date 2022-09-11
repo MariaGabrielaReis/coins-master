@@ -17,6 +17,9 @@ export const Subtitle = styled.Text`
 `;
 
 export const Navbar = styled.Text`
+  margin-right: 12px;
+
+  font-family: "Poppins";
   font: ${({ theme }) => theme.fonts.navbar};
   color: ${({ theme }) => theme.colors.black};
 `;

@@ -10,7 +10,9 @@ export default function OnBoarding() {
   const navigation = useNavigation();
   return (
     <Container>
-      <Illustration source={require("@assets/onboarding-illustration.png")} />
+      <Illustration
+        source={require("@assets/images/onboarding-illustration.png")}
+      />
       <Title>Uma forma fácil de {"\n"} distribuir moedas do API</Title>
       <Subtitle>
         Agora você pode avaliar e ser {"\n"} avaliado de maneira simples e

@@ -11,7 +11,9 @@ export default function TeamOptions() {
 
   return (
     <Container>
-      <Illustration source={require("@assets/team-options-illustration.png")} />
+      <Illustration
+        source={require("@assets/images/team-options-illustration.png")}
+      />
       <Content>
         <Title>Entre ou crie equipes!</Title>
         <Subtitle>

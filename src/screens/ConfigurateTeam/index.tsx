@@ -54,21 +54,19 @@ export default function ConfigurateTeam() {
         setValue={setProductOwner}
         hasSmallSpacing={true}
       />
-
       <TextInput
         label={"Código da equipe"}
         placeholder={"Exemplo: tbd2022"}
         value={teamCode}
         onChange={teamCode => seTeamCode(teamCode)}
       />
-
       <BlackButton
         label={"ADICIONAR MOEDAS"}
-        onClick={() => navigation.navigate("ConfigurateTeam")}
+        onClick={() => navigation.navigate("BlockCoinsDistribution")}
       />
       <YellowButton
         label={"ATUALIZAR"}
-        onClick={() => navigation.navigate("ConfigurateTeam")}
+        onClick={() => navigation.navigate("Home")}
       />
       <LabelButton
         label={"DELETAR EQUIPE"}

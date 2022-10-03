@@ -12,6 +12,7 @@ export type HomeStackNavigatorParamList = {
   ConfigurateTeam: undefined;
   DeleteTeam: undefined;
   AddCoins: undefined;
+  CoinsDistribution: undefined;
   BlockCoinsDistribution: undefined;
 };
 
@@ -19,11 +20,4 @@ export type BottomTabNavigatorParamList = {
   Home: HomeStackNavigatorParamList;
   Profile: undefined;
   DeleteTeam: undefined;
-};
-
-export type OthersStackNavigatorParamList = {
-  AddCoins: undefined;
-  BlockCoinsDistribution: undefined;
-
-  ConfigurateTeam: undefined;
 };

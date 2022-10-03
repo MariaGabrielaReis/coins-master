@@ -12,6 +12,7 @@ import ConfigurateTeam from "@screens/ConfigurateTeam";
 import DeleteTeam from "@screens/DeleteTeam";
 import AddCoins from "@screens/AddCoins";
 import BlockCoinsDistribution from "@screens/BlockCoinsDistribution";
+import CoinsDistribution from "@screens/CoinsDistribution";
 
 const HomeStack = createNativeStackNavigator<HomeStackNavigatorParamList>();
 
@@ -66,6 +67,14 @@ export default function HomeStackNavigator() {
         options={{
           title: "",
           headerRight: () => <Navbar>Adição de moedas</Navbar>,
+        }}
+      />
+      <HomeStack.Screen
+        name="CoinsDistribution"
+        component={CoinsDistribution}
+        options={{
+          title: "",
+          headerRight: () => <Navbar>Distribuição de moedas</Navbar>,
         }}
       />
       <HomeStack.Screen

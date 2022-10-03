@@ -77,7 +77,7 @@ export default function ConfigurateTeam() {
 
       <BlackButton
         label={"ADICIONAR MOEDAS"}
-        onClick={() => navigation.navigate("BlockCoinsDistribution")}
+        onClick={() => navigation.navigate("AddCoins")}
       />
       <YellowButton
         label={"ATUALIZAR"}

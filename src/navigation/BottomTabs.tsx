@@ -51,6 +51,8 @@ export default function BottomTabs() {
                 return { display: "none" };
               case "BlockCoinsDistribution":
                 return { display: "none" };
+              case "CoinsDistribution":
+                return { display: "none" };
               default:
                 return;
             }

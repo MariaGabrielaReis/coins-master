@@ -17,6 +17,7 @@ export function TextInput({
     <Container hasMarginRight={hasMarginRight}>
       <Label>{label}</Label>
       <Input
+        name={label}
         value={value}
         onChangeText={onChange}
         placeholder={placeholder}

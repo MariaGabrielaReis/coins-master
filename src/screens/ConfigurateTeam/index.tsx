@@ -7,6 +7,7 @@ import { Dropdown, TextInput } from "@components/inputs";
 
 import { members } from "@mocks/members";
 import { OptionProps } from "@components/inputs/InputProps";
+import { Habilities } from "@components/cards/Habilities";
 
 export default function ConfigurateTeam() {
   const navigation = useNavigation();
@@ -27,6 +28,14 @@ export default function ConfigurateTeam() {
   members.forEach(member => {
     membersNames.push({ label: member.name, value: member.name });
   });
+
+  const [habilities, setHabilities] = useState([
+    "Proatividade",
+    "Autonomia",
+    "Colaboração",
+    "Entrega de Resultados",
+    "Resiliência",
+  ]);
 
   return (
     <Container>
@@ -60,6 +69,12 @@ export default function ConfigurateTeam() {
         value={teamCode}
         onChange={teamCode => seTeamCode(teamCode)}
       />
+
+      <Habilities
+        defaultValue={habilities}
+        handleOnChange={(habilities: string[]) => setHabilities(habilities)}
+      />
+
       <BlackButton
         label={"ADICIONAR MOEDAS"}
         onClick={() => navigation.navigate("BlockCoinsDistribution")}

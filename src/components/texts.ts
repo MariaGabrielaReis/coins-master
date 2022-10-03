@@ -24,6 +24,14 @@ export const Navbar = styled.Text`
   color: ${({ theme }) => theme.colors.black};
 `;
 
+export const TopicTitle = styled.Text`
+  margin-right: 12px;
+
+  font-family: "Poppins";
+  font: ${({ theme }) => theme.fonts.navbar};
+  color: ${({ theme }) => theme.colors.black};
+`;
+
 export const Label = styled.Text`
   margin-bottom: ${({ theme }) => theme.spacing.xs}
   font: ${({ theme }) => theme.fonts.text};

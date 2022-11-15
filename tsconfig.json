@@ -3,6 +3,9 @@
   "compilerOptions": {
     /* Completeness */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "strict": false,
+    "esModuleInterop": true,
+    "noImplicitAny": false /* Raise error on expressions and declarations with an implied 'any' type. */,
 
     "types": ["@types/styled-components-react-native"],
 
@@ -12,7 +15,12 @@
       "@components/*": ["./src/components/*"],
       "@global/*": ["./src/global/*"],
       "@mocks/*": ["./src/mocks/*"],
-      "@screens/*": ["./src/screens/*"]
+      "@screens/*": ["./src/screens/*"],
+      "@interfaces/*": ["./src/utils/interfaces/*"],
+      "@api": ["./src/services/api"],
+      "@requests/*": ["./src/utils/requests/*"],
+      "@context": ["./src/context/index"],
+      "@reducer": ["./src/context/reducers/reducer"]
     }
   }
 }

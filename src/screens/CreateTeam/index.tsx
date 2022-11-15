@@ -1,22 +1,27 @@
-import React, { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
+import React, { useState, useContext } from "react";
 
 import { Container } from "./styles";
 import { YellowButton } from "@components/buttons";
 import { Dropdown, TextInput } from "@components/inputs";
 import { OptionProps } from "@components/inputs/InputProps";
-import { Habilities } from "@components/cards/Habilities";
+import { Habilities } from "@components/cards";
+import { createTeam } from "@requests/TeamRequests";
+import { useNavigation } from "@react-navigation/native";
+import { MainContext } from "@context";
+import { setTeam } from "@reducer";
+import { Team } from "@interfaces/Team";
 
 export default function CreateTeam() {
   const navigation = useNavigation();
-
+  const { state, dispatch } = useContext(MainContext);
+  const [isLoading, setIsLoading] = useState(false);
   const [name, setName] = useState("");
   const [teamCode, seTeamCode] = useState("");
 
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("Selecione uma opção");
+  const [classroom, setClassroom] = useState("");
 
-  const [habilities, setHabilities] = useState([
+  const [abilities, setAbilities] = useState([
     "Proatividade",
     "Autonomia",
     "Colaboração",
@@ -46,6 +51,17 @@ export default function CreateTeam() {
     { label: "6ºBD", value: "6bd" },
   ];
 
+  function handleCreateTeam() {
+    setIsLoading(true);
+    createTeam(name, teamCode, "1dsm", abilities, navigation).then(
+      (newTeam: Team) => {
+        dispatch(setTeam(newTeam));
+        setIsLoading(false);
+        navigation.navigate("Login");
+      },
+    );
+  }
+
   return (
     <Container>
       <TextInput
@@ -65,18 +81,19 @@ export default function CreateTeam() {
         label={"Turma"}
         items={semesters}
         open={open}
-        value={value}
+        value={classroom}
         setOpen={setOpen}
-        setValue={setValue}
+        setValue={setClassroom}
         hasSmallSpacing={true}
       />
       <Habilities
-        defaultValue={habilities}
-        handleOnChange={(habilities: string[]) => setHabilities(habilities)}
+        defaultValue={abilities}
+        handleOnChange={(abilities: string[]) => setAbilities(abilities)}
       />
       <YellowButton
-        label={"CRIAR EQUIPE"}
-        onClick={() => navigation.navigate("Login")}
+        label={isLoading ? "Aguarde..." : "CRIAR EQUIPE"}
+        isDisabled={isLoading}
+        onClick={handleCreateTeam}
       />
     </Container>
   );

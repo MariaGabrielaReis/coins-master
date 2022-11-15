@@ -7,7 +7,7 @@ import { Dropdown, TextInput } from "@components/inputs";
 
 import { members } from "@mocks/members";
 import { OptionProps } from "@components/inputs/InputProps";
-import { Habilities } from "@components/cards/Habilities";
+import { Habilities } from "@components/cards";
 
 export default function ConfigurateTeam() {
   const navigation = useNavigation();

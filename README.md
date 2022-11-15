@@ -8,7 +8,9 @@
 <span id="projeto">
 
 # :bookmark_tabs: Sobre o projeto
+
 Uma forma fácil de distribuir moedas do API (Aprendizagem por Projetos Integradores)!
+
 - Projeto desenvolvido para a disciplina de Programação para Dispositivos Móveis na FATEC de São José dos Campos
 
 <div align="center">
@@ -16,25 +18,28 @@ Uma forma fácil de distribuir moedas do API (Aprendizagem por Projetos Integrad
 </div>
 
 ### :hammer_and_wrench: Tecnologias e ferramentas
+
 - [Figma](http://www.figma.com/), [React Native](https://reactnative.dev/), [TypeScript](https://www.typescriptlang.org/)
-  
+
 ### Funcionalidades
-- [X] Criar, entrar e gerenciar equipes baseadas em SCRUM (no modelo FATEC)
-- [X] Criar usuários (que pertencerão a times)
-- [X] Distribuição de moedas do API
-  - [X] Adição das moedas conquistadas ao final de cada sprint
-	- [ ] Push notification para lembretes de avaliação ao final das sprints
-	- [X] Avaliação dos integrantes para distribuição das moedas, também sendo possível enviar feedbacks individuais
-- [X] Atualização de dados de usuários e equipes
-- [X] Exclusão de conta e de equipes
-- [X] Histórico de avaliação de cada integrante do grupo
+
+- [x] Criar, entrar e gerenciar equipes baseadas em SCRUM (no modelo FATEC)
+- [x] Criar usuários (que pertencerão a times)
+- [x] Distribuição de moedas do API
+  - [x] Adição das moedas conquistadas ao final de cada sprint
+  - [ ] Push notification para lembretes de avaliação ao final das sprints
+  - [x] Avaliação dos integrantes para distribuição das moedas, também sendo possível enviar feedbacks individuais
+- [x] Atualização de dados de usuários e equipes
+- [x] Exclusão de conta e de equipes
+- [x] Histórico de avaliação de cada integrante do grupo
 - [ ] Geração de relatório da sprint (em um excel) para professores
 
 <span id="requisitos">
 
 ## :gear: Como rodar
+
 Antes de começar, você vai precisar ter instalado o Node.js (confira um tutorial
-[aqui](https://www.notion.so/Instala-o-das-ferramentas-405f3e8b014649cbb422dee6b5bd0535)), 
+[aqui](https://www.notion.so/Instala-o-das-ferramentas-405f3e8b014649cbb422dee6b5bd0535)),
 algum emulador e para clonar esse repositório o [Git](https://git-scm.com/) também!
 
 ```bash
@@ -65,7 +70,7 @@ $ npx react-native run-android
 |--- 📁 assets
 |--- 📁 components
 |--- 📁 global
-|--- 📁 navigation
+|--- 📁 routes
 |--- 📁 screens
 |--- 📁 services
 |--- 📁 utils
@@ -84,4 +89,3 @@ $ npx react-native run-android
 ```
 
 [![image](https://img.shields.io/badge/✨%20Maria%20Gabriela%20Reis,%202022-LinkedIn-009973?style=flat-square)](https://www.linkedin.com/in/mariagabrielareis/)
- 

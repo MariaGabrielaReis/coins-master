@@ -11,11 +11,8 @@ export default function Sorry() {
         source={require("@assets/images/sorry-illustration.png")}
         withoutMargin={true}
       />
-      <Title>Opa! Esse recurso ainda {"\n"} não tá disponível</Title>
-      <Subtitle>
-        Aguarde por novas versões do app {"\n"} para utilizar essa
-        funcionalidade!
-      </Subtitle>
+      <Title>Ops! Houve algum problema</Title>
+      <Subtitle>Tente novamente mais tarde!</Subtitle>
     </Container>
   );
 }

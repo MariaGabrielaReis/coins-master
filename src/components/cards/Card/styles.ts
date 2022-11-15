@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 
 export const Container = styled.TouchableOpacity`
   margin-bottom: ${({ theme }) => theme.spacing.sm};
-  padding: 8px;
+  padding: 16px;
 
   display: flex;
   flex-direction: row;
@@ -18,12 +18,10 @@ export const Avatar = styled.Image`
   border-radius: ${({ theme }) => theme.borderRadius.md};
 `;
 
-export const Content = styled.View`
-  margin-left: ${({ theme }) => theme.spacing.md};
-`;
+export const Content = styled.View``;
 
 export const Name = styled.Text`
-  margin-bottom: ${({ theme }) => theme.spacing.sm};
+  margin-bottom: ${({ theme }) => theme.spacing.xs};
 
   font: ${({ theme }) => theme.fonts.cardTitle};
   color: ${({ theme }) => theme.colors.black};

@@ -1,7 +1,7 @@
 export type CardProps = {
-  photo: string;
   name: string;
   role: string;
+  photo?: string;
 };
 
 export type HabilitiesProps = {

@@ -29,3 +29,12 @@ export async function createTeam(
     handleError(error, navigation);
   }
 }
+
+export async function showTeam(code: string, navigation: any) {
+  try {
+    const response = await api.get(`teams/${code}`);
+    return response.data;
+  } catch (error) {
+    handleError(error, navigation);
+  }
+}

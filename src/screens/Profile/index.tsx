@@ -1,9 +1,8 @@
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import { Container, Content } from "./styles";
-import { BlackButton, YellowButton } from "@components/buttons";
-import { useNavigation } from "@react-navigation/native";
-import { TextInput } from "@components/inputs";
+import { TextInput, BlackButton, YellowButton } from "@components";
 
 export default function Profile() {
   const navigation = useNavigation();

@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { FlatList, Text } from "react-native";
 
-import { Card } from "@components/cards";
+import { Card } from "@components";
 import { Container } from "./styles";
 
 import { showTeam } from "@requests/TeamRequests";

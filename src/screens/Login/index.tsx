@@ -1,13 +1,13 @@
 import React, { useState, useContext } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import { Container } from "./styles";
-import { BlackButton } from "@components/buttons";
-import { TextInput } from "@components/inputs";
+import { BlackButton, TextInput } from "@components";
+
 import { createUser } from "@requests/UserRequests";
 import { User } from "@interfaces/User";
 import { MainContext } from "@context";
 import { setUser } from "@reducer";
-import { useNavigation } from "@react-navigation/native";
 
 export default function Login() {
   const {
@@ -21,8 +21,8 @@ export default function Login() {
   function handleLogin() {
     setIsLoading(true);
     createUser(name, team.code, "Dev Team", navigation).then((user: User) => {
-      setIsLoading(false);
       dispatch(setUser(user));
+      setIsLoading(false);
       navigation.navigate("Home");
     });
   }

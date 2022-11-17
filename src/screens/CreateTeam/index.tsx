@@ -1,12 +1,16 @@
 import React, { useState, useContext } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import { Container } from "./styles";
-import { YellowButton } from "@components/buttons";
-import { Dropdown, TextInput } from "@components/inputs";
-import { OptionProps } from "@components/inputs/InputProps";
-import { Habilities } from "@components/cards";
+import {
+  YellowButton,
+  Dropdown,
+  TextInput,
+  Habilities,
+  OptionProps,
+} from "@components";
+
 import { createTeam } from "@requests/TeamRequests";
-import { useNavigation } from "@react-navigation/native";
 import { MainContext } from "@context";
 import { setTeam } from "@reducer";
 import { Team } from "@interfaces/Team";

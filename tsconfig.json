@@ -12,7 +12,7 @@
     "baseUrl": "./",
     "paths": {
       "@assets/*": ["./src/assets/*"],
-      "@components/*": ["./src/components/*"],
+      "@components": ["./src/components"],
       "@global/*": ["./src/global/*"],
       "@mocks/*": ["./src/mocks/*"],
       "@screens/*": ["./src/screens/*"],

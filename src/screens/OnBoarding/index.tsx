@@ -1,11 +1,10 @@
 import React from "react";
 import Icon from "react-native-vector-icons/AntDesign";
-
-import { Container, StartButton } from "./styles";
-import { Title, Subtitle } from "@components/texts";
-import { Illustration } from "@components/illustrations";
 import { useNavigation } from "@react-navigation/native";
+
 import theme from "@global/styles/theme";
+import { Container, StartButton } from "./styles";
+import { Illustration, Title, Subtitle } from "@components";
 
 export default function OnBoarding() {
   const navigation = useNavigation();

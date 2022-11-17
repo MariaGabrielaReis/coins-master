@@ -1,9 +1,8 @@
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import { Container } from "./styles";
-import { YellowButton } from "@components/buttons";
-import { useNavigation } from "@react-navigation/native";
-import { TextInput } from "@components/inputs";
+import { YellowButton, TextInput } from "@components";
 
 export default function AddCoins() {
   const navigation = useNavigation();

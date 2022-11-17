@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
 import { Container, Content } from "./styles";
-import { Title, Subtitle } from "@components/texts";
-import { Illustration } from "@components/illustrations";
-import { BlackButton } from "@components/buttons";
+import { Title, Subtitle, Illustration, BlackButton } from "@components";
+
+import { deleteTeam } from "@requests/TeamRequests";
+import { MainContext } from "@context";
+import { setTeam } from "@reducer";
 
 export default function DeleteTeam() {
   const navigation = useNavigation();
+  const {
+    state: { team },
+    dispatch,
+  } = useContext(MainContext);
+  const [isLoading, setIsLoading] = useState(false);
+
+  function handleDelete() {
+    setIsLoading(true);
+    deleteTeam(team.code, navigation).then(() => {
+      dispatch(setTeam(undefined));
+      setIsLoading(false);
+      navigation.navigate("OnBoarding");
+    });
+  }
 
   return (
     <Container>
@@ -18,8 +34,8 @@ export default function DeleteTeam() {
         <Title>Essa ação é irreversível</Title>
         <Subtitle>Quer mesmo excluir a equipe? </Subtitle>
         <BlackButton
-          label={"EXCLUIR"}
-          onClick={() => navigation.navigate("TeamOptions")}
+          label={isLoading ? "Aguarde..." : "EXCLUIR"}
+          onClick={handleDelete}
         />
       </Content>
     </Container>

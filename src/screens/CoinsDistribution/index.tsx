@@ -2,8 +2,7 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
 import { ButtonsContainer, Container, Content } from "./styles";
-import { Title, Subtitle } from "@components/texts";
-import { BlackButton, YellowButton } from "@components/buttons";
+import { Title, Subtitle, BlackButton, YellowButton } from "@components";
 
 export default function CoinsDistribution() {
   const navigation = useNavigation();

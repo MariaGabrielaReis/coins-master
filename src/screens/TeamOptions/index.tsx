@@ -2,9 +2,13 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
 import { Container, Content } from "./styles";
-import { Title, Subtitle } from "@components/texts";
-import { Illustration } from "@components/illustrations";
-import { BlackButton, YellowButton } from "@components/buttons";
+import {
+  Illustration,
+  Title,
+  Subtitle,
+  BlackButton,
+  YellowButton,
+} from "@components";
 
 export default function TeamOptions() {
   const navigation = useNavigation();

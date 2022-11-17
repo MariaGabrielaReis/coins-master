@@ -1,8 +1,7 @@
 import React from "react";
 
 import { Container } from "./styles";
-import { Title, Subtitle } from "@components/texts";
-import { Illustration } from "@components/illustrations";
+import { Illustration, Title, Subtitle } from "@components";
 
 export default function BlockCoinsDistribution() {
   return (

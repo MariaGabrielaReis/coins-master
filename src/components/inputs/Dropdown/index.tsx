@@ -1,6 +1,6 @@
 import React from "react";
 import { SelectProps } from "../InputProps";
-import { Label } from "@components/texts";
+import { Label } from "@components";
 import { DropdownContainer } from "./styles";
 
 export function Dropdown({
@@ -18,7 +18,7 @@ export function Dropdown({
       <Label>{label}</Label>
       <DropdownContainer
         open={open}
-        value={value}
+        value={value?.name ?? "Selecione um integrante"}
         items={items}
         setOpen={() => setOpen}
         setValue={() => setValue}

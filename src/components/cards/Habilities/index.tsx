@@ -9,7 +9,7 @@ import {
 } from "./styles";
 
 import Icon from "react-native-vector-icons/AntDesign";
-import { TopicTitle } from "@components/texts";
+import { TopicTitle } from "@components";
 import theme from "@global/styles/theme";
 
 export function Habilities({ defaultValue, handleOnChange }: HabilitiesProps) {

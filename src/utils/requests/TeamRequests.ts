@@ -38,3 +38,11 @@ export async function showTeam(code: string, navigation: any) {
     handleError(error, navigation);
   }
 }
+
+export async function deleteTeam(code: string, navigation: any) {
+  try {
+    await api.delete(`teams/${code}`);
+  } catch (error) {
+    handleError(error, navigation);
+  }
+}

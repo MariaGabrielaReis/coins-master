@@ -1,6 +1,6 @@
 import React from "react";
 import { InputProps } from "../InputProps";
-import { Label } from "@components/texts";
+import { Label } from "@components";
 import { Container, Input, SupportText } from "./styles";
 
 export function TextInput({

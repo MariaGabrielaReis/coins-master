@@ -1,3 +1,5 @@
+import { User } from "@interfaces/User";
+
 export type InputProps = {
   label: string;
   placeholder?: string;
@@ -14,9 +16,9 @@ export type SelectProps = {
   items: OptionProps[];
   isDisabled?: boolean;
   open: boolean;
-  value: string;
+  value: User;
   setOpen: (value: boolean) => void;
-  setValue: (value: string) => void;
+  setValue: (value: User) => void;
   hasSmallSpacing?: boolean;
 };
 

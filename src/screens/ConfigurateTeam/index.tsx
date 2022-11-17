@@ -15,7 +15,8 @@ import {
 import { MainContext } from "@context";
 import { updateTeam } from "@requests/TeamRequests";
 import { Team } from "@interfaces/Team";
-import { setTeam } from "@reducer";
+import { setMembers, setTeam } from "@reducer";
+import { User } from "@interfaces/User";
 
 export default function ConfigurateTeam() {
   const navigation = useNavigation();
@@ -27,39 +28,42 @@ export default function ConfigurateTeam() {
   const [name, setName] = useState("");
   const [teamCode, seTeamCode] = useState("");
   const [openScrumMasterDropdown, setOpenScrumMasterDropdown] = useState(false);
-  const [scrumMaster, setScrumMaster] = useState("");
+  const [scrumMaster, setScrumMaster] = useState<User>();
   const [openProductOwnerDropdown, setOpenProductOwnerDropdown] =
     useState(false);
-  const [productOwner, setProductOwner] = useState("");
+  const [productOwner, setProductOwner] = useState<User>();
   const [isLoading, setIsLoading] = useState(false);
 
-  let membersNames: OptionProps[] = [
-    { label: "Selecione uma opção", value: "" },
-  ];
+  let membersNames: OptionProps[] = [];
   members.forEach(member => {
+    member.role === "Scrum Master" && setScrumMaster(member);
+    member.role === "Product Owner" && setProductOwner(member);
     membersNames.push({ label: member.name, value: member.name });
   });
 
   const [abilities, setAbilities] = useState([
-    "Proatividade",
-    "Autonomia",
-    "Colaboração",
-    "Entrega de Resultados",
-    "Resiliência",
+    team?.ability1 ?? "Proatividade",
+    team?.ability2 ?? "Autonomia",
+    team?.ability3 ?? "Colaboração",
+    team?.ability4 ?? "Entrega de resultados",
+    team?.ability5 ?? "Carisma",
   ]);
 
   function handleUpdate() {
     setIsLoading(true);
     updateTeam(
       team.code,
-      teamCode,
-      name,
-      "1dsm",
+      teamCode ?? team.code,
+      name ?? team.name,
+      "5dsm" ?? team.classroom,
       abilities,
       team.coins,
+      scrumMaster,
+      productOwner,
       navigation,
-    ).then((team: Team) => {
-      dispatch(setTeam(team));
+    ).then((response: { team: Team; members: User[] }) => {
+      dispatch(setTeam(response.team));
+      dispatch(setMembers(members));
       setIsLoading(false);
       navigation.navigate("Home");
     });

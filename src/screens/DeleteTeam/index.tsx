@@ -6,7 +6,7 @@ import { Title, Subtitle, Illustration, BlackButton } from "@components";
 
 import { deleteTeam } from "@requests/TeamRequests";
 import { MainContext } from "@context";
-import { setTeam } from "@reducer";
+import { setMembers, setTeam, setUser } from "@reducer";
 
 export default function DeleteTeam() {
   const navigation = useNavigation();
@@ -20,6 +20,8 @@ export default function DeleteTeam() {
     setIsLoading(true);
     deleteTeam(team.code, navigation).then(() => {
       dispatch(setTeam(undefined));
+      dispatch(setMembers(undefined));
+      dispatch(setUser(undefined));
       setIsLoading(false);
       navigation.navigate("OnBoarding");
     });

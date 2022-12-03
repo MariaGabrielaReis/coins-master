@@ -18,7 +18,7 @@ export default function DeleteTeam() {
 
   function handleDelete() {
     setIsLoading(true);
-    deleteTeam(team.code, navigation).then(() => {
+    deleteTeam(team.name, navigation).then(() => {
       dispatch(setTeam(undefined));
       dispatch(setMembers(undefined));
       dispatch(setUser(undefined));

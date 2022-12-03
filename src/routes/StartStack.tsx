@@ -2,15 +2,14 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import theme from "@global/styles/theme";
-import { Navbar } from "@components/texts";
+import { Navbar } from "@components";
 
 import { StartStackNavigatorParamList } from "./types";
 import OnBoarding from "@screens/OnBoarding";
-import TeamOptions from "@screens/TeamOptions";
 import CreateTeam from "@screens/CreateTeam";
 import Login from "@screens/Login";
 import Sorry from "@screens/Sorry";
-import BottomTabs from "./BottomTabs";
+import HomeStackNavigator from "./HomeStack";
 
 const StartStack = createNativeStackNavigator<StartStackNavigatorParamList>();
 
@@ -30,11 +29,11 @@ export default function StartStackNavigator() {
         component={OnBoarding}
         options={{ headerShown: false }}
       />
-      <StartStack.Screen
+      {/* <StartStack.Screen
         name="TeamOptions"
         component={TeamOptions}
         options={{ headerShown: false }}
-      />
+      /> */}
       <StartStack.Screen
         name="CreateTeam"
         component={CreateTeam}
@@ -43,6 +42,14 @@ export default function StartStackNavigator() {
           headerRight: () => <Navbar>Cadastre sua equipe</Navbar>,
         }}
       />
+      {/* <StartStack.Screen
+        name="UseTeamCode"
+        component={UseTeamCode}
+        options={{
+          title: "",
+          headerRight: () => <Navbar>Usar código de equipe</Navbar>,
+        }}
+      /> */}
       <StartStack.Screen
         name="Login"
         component={Login}
@@ -58,7 +65,7 @@ export default function StartStackNavigator() {
       />
       <StartStack.Screen
         name="Home"
-        component={BottomTabs}
+        component={HomeStackNavigator}
         options={{ headerShown: false }}
       />
     </StartStack.Navigator>

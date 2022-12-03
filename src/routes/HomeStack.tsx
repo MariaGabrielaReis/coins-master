@@ -4,15 +4,15 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Icon from "react-native-vector-icons/AntDesign";
 import theme from "@global/styles/theme";
-import { Navbar } from "@components/texts";
+import { Navbar } from "@components";
 
 import { HomeStackNavigatorParamList } from "./types";
 import Home from "@screens/Home";
 import ConfigurateTeam from "@screens/ConfigurateTeam";
 import DeleteTeam from "@screens/DeleteTeam";
 import AddCoins from "@screens/AddCoins";
-import BlockCoinsDistribution from "@screens/BlockCoinsDistribution";
 import CoinsDistribution from "@screens/CoinsDistribution";
+import AddMember from "@screens/AddMember";
 
 const HomeStack = createNativeStackNavigator<HomeStackNavigatorParamList>();
 
@@ -70,6 +70,14 @@ export default function HomeStackNavigator() {
         }}
       />
       <HomeStack.Screen
+        name="AddMember"
+        component={AddMember}
+        options={{
+          title: "",
+          headerRight: () => <Navbar>Cadastro de integrante</Navbar>,
+        }}
+      />
+      <HomeStack.Screen
         name="CoinsDistribution"
         component={CoinsDistribution}
         options={{
@@ -77,14 +85,14 @@ export default function HomeStackNavigator() {
           headerRight: () => <Navbar>Distribuição de moedas</Navbar>,
         }}
       />
-      <HomeStack.Screen
+      {/* <HomeStack.Screen
         name="BlockCoinsDistribution"
         component={BlockCoinsDistribution}
         options={{
           title: "",
           headerRight: () => <Navbar>Distribuição de moedas</Navbar>,
         }}
-      />
+      /> */}
     </HomeStack.Navigator>
   );
 }

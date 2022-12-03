@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { FlatList, Text } from "react-native";
 
-import { Card } from "@components";
+import { BlackButton, Card } from "@components";
 import { Container } from "./styles";
 
 import { showTeam } from "@requests/TeamRequests";
@@ -17,7 +17,7 @@ export default function Home() {
   const navigation = useNavigation();
 
   useEffect(() => {
-    showTeam(team.code, navigation).then(response => {
+    showTeam(team.name, navigation).then(response => {
       dispatch(setMembers(response.members));
       dispatch(setTeam(response.team));
     });
@@ -33,6 +33,12 @@ export default function Home() {
         />
       ) : (
         <Text>Carregando dados da equipe...</Text>
+      )}
+      {team?.coins !== 0 && (
+        <BlackButton
+          label={"DISTRIBUIR MOEDAS"}
+          onClick={() => navigation.navigate("CoinsDistribution")}
+        />
       )}
     </Container>
   );

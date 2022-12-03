@@ -16,15 +16,14 @@ export default function OnBoarding() {
       />
       <Title>Uma forma fácil de {"\n"} distribuir moedas do API</Title>
       <Subtitle>
-        Agora você pode avaliar e ser {"\n"} avaliado de maneira simples e
-        rápida
+        Avalie e dê feedbacks de maneira {"\n"} simples e rápida
       </Subtitle>
       <StartButton>
         <Icon
           name="arrowright"
           size={32}
           color={theme.colors.black}
-          onPress={() => navigation.navigate("TeamOptions")}
+          onPress={() => navigation.navigate("CreateTeam")}
         />
       </StartButton>
     </Container>

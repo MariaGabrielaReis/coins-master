@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 
 import { Container } from "./styles";
-import { BlackButton, TextInput } from "@components";
+import { YellowButton, TextInput } from "@components";
 
 import { createUser } from "@requests/UserRequests";
 import { User } from "@interfaces/User";
@@ -20,11 +20,13 @@ export default function Login() {
 
   function handleLogin() {
     setIsLoading(true);
-    createUser(name, team.code, "Dev Team", navigation).then((user: User) => {
-      dispatch(setUser(user));
-      setIsLoading(false);
-      navigation.navigate("Home");
-    });
+    createUser(name, team.name, "Scrum Master", navigation).then(
+      (user: User) => {
+        dispatch(setUser(user));
+        setIsLoading(false);
+        navigation.navigate("Home");
+      },
+    );
   }
 
   return (
@@ -35,7 +37,7 @@ export default function Login() {
         value={name}
         onChange={name => setName(name)}
       />
-      <BlackButton
+      <YellowButton
         label={isLoading ? "Aguarde..." : "CRIAR CONTINUAR"}
         isDisabled={isLoading}
         onClick={handleLogin}

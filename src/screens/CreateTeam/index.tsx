@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import { Container } from "./styles";
 import {
-  YellowButton,
+  BlackButton,
   Dropdown,
   TextInput,
   Habilities,
@@ -20,9 +20,6 @@ export default function CreateTeam() {
   const { state, dispatch } = useContext(MainContext);
   const [isLoading, setIsLoading] = useState(false);
   const [name, setName] = useState("");
-  const [teamCode, seTeamCode] = useState("");
-
-  const [open, setOpen] = useState(false);
   const [classroom, setClassroom] = useState("");
 
   const [abilities, setAbilities] = useState([
@@ -57,13 +54,11 @@ export default function CreateTeam() {
 
   function handleCreateTeam() {
     setIsLoading(true);
-    createTeam(name, teamCode, "1dsm", abilities, navigation).then(
-      (newTeam: Team) => {
-        dispatch(setTeam(newTeam));
-        setIsLoading(false);
-        navigation.navigate("Login");
-      },
-    );
+    createTeam(name, classroom, abilities, navigation).then((newTeam: Team) => {
+      dispatch(setTeam(newTeam));
+      setIsLoading(false);
+      navigation.navigate("Login");
+    });
   }
 
   return (
@@ -74,14 +69,20 @@ export default function CreateTeam() {
         value={name}
         onChange={name => setName(name)}
       />
-      <TextInput
+      {/* <TextInput
         label={"Código da equipe"}
         placeholder={"Exemplo: tbd2022"}
         supportText={"(obs.: apenas letras minúsculas e números)"}
         value={teamCode}
         onChange={teamCode => seTeamCode(teamCode)}
+      /> */}
+      <TextInput
+        label={"Turma"}
+        placeholder={"Exemplo: 4º DSM"}
+        value={classroom}
+        onChange={classroom => setClassroom(classroom)}
       />
-      <Dropdown
+      {/* <Dropdown
         label={"Turma"}
         items={semesters}
         open={open}
@@ -89,12 +90,12 @@ export default function CreateTeam() {
         setOpen={setOpen}
         setValue={setClassroom}
         hasSmallSpacing={true}
-      />
+      /> */}
       <Habilities
         defaultValue={abilities}
         handleOnChange={(abilities: string[]) => setAbilities(abilities)}
       />
-      <YellowButton
+      <BlackButton
         label={isLoading ? "Aguarde..." : "CRIAR EQUIPE"}
         isDisabled={isLoading}
         onClick={handleCreateTeam}

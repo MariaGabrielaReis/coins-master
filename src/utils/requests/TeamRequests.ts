@@ -7,7 +7,6 @@ function handleError(error: unknown, navigation: any) {
 
 export async function createTeam(
   name: string,
-  code: string,
   classroom: string,
   abilities: string[],
   navigation: any,
@@ -15,7 +14,7 @@ export async function createTeam(
   try {
     const response = await api.post(`teams`, {
       name,
-      code,
+      code: name,
       classroom,
       ability1: abilities[0],
       ability2: abilities[1],

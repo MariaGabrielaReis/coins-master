@@ -7,6 +7,7 @@ import {
   SetTeam,
   SetUser,
   SetMembers,
+  SetTeamCoins,
 } from "./TeamActions";
 
 export function reducer(
@@ -20,6 +21,8 @@ export function reducer(
       return { ...state, user: action.payload };
     case ActionTypes.setMembers:
       return { ...state, members: action.payload };
+    case ActionTypes.setTeamCoins:
+      return { ...state, team: { ...state.team, coins: action.payload } };
 
     default:
       return state;
@@ -40,4 +43,9 @@ export const setUser = (user: User): SetUser => ({
 export const setMembers = (members: User[]): SetMembers => ({
   type: ActionTypes.setMembers,
   payload: members,
+});
+
+export const setTeamCoins = (coins: number): SetTeamCoins => ({
+  type: ActionTypes.setTeamCoins,
+  payload: coins,
 });

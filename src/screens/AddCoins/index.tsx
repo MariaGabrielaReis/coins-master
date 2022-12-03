@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 
 import { Container } from "./styles";
 import { YellowButton, TextInput } from "@components";
+import { MainContext } from "@context";
+import { setTeamCoins } from "@reducer";
 
 export default function AddCoins() {
+  const { state, dispatch } = useContext(MainContext);
   const navigation = useNavigation();
 
   const [coins, setCoins] = useState(0);
@@ -20,7 +23,10 @@ export default function AddCoins() {
       />
       <YellowButton
         label={"CONTINUAR"}
-        onClick={() => navigation.navigate("Home")}
+        onClick={() => {
+          dispatch(setTeamCoins(coins));
+          navigation.navigate("Home");
+        }}
       />
     </Container>
   );

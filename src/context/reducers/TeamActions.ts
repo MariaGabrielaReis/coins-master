@@ -5,6 +5,7 @@ export enum ActionTypes {
   setTeam,
   setUser,
   setMembers,
+  setTeamCoins,
 }
 
 export type SetTeam = {
@@ -22,4 +23,9 @@ export type SetMembers = {
   payload: User[];
 };
 
-export type TeamActions = SetTeam | SetUser | SetMembers;
+export type SetTeamCoins = {
+  type: ActionTypes.setTeamCoins;
+  payload: number;
+};
+
+export type TeamActions = SetTeam | SetUser | SetMembers | SetTeamCoins;

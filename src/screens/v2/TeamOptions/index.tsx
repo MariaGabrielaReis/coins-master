@@ -28,9 +28,8 @@ export default function TeamOptions() {
           onClick={() => navigation.navigate("CreateTeam")}
         />
         <YellowButton
-          isDisabled={true}
           label={"USAR CÓDIGO DE EQUIPE"}
-          onClick={() => navigation.navigate("Sorry")}
+          onClick={() => navigation.navigate("UseTeamCode")}
         />
       </Content>
     </Container>

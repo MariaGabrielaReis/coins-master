@@ -6,8 +6,8 @@ import { YellowButton, TextInput } from "@components";
 
 import { createUser } from "@requests/UserRequests";
 import { User } from "@interfaces/User";
-import { MainContext } from "@context";
-import { setMembers, setUser } from "@reducer";
+import { MainContext } from "@context/index";
+import { setMembers } from "@reducer/reducer";
 
 export default function AddMember() {
   const {

@@ -2,11 +2,11 @@ import React, { useState, useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 
 import { Container } from "./styles";
-import { BlackButton, TextInput, Habilities, OptionProps } from "@components";
+import { BlackButton, TextInput, Habilities } from "@components";
 
 import { createTeam } from "@requests/TeamRequests";
-import { MainContext } from "@context";
-import { setTeam } from "@reducer";
+import { MainContext } from "@context/index";
+import { setTeam } from "@reducer/reducer";
 import { Team } from "@interfaces/Team";
 
 export default function CreateTeam() {

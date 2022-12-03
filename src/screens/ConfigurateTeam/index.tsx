@@ -9,7 +9,7 @@ import {
   Habilities,
 } from "@components";
 
-import { MainContext } from "@context";
+import { MainContext } from "@context/index";
 
 export default function ConfigurateTeam() {
   const navigation = useNavigation();

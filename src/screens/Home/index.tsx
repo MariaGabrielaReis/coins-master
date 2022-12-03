@@ -6,8 +6,8 @@ import { BlackButton, Card } from "@components";
 import { Container } from "./styles";
 
 import { showTeam } from "@requests/TeamRequests";
-import { MainContext } from "@context";
-import { setMembers, setTeam } from "@reducer";
+import { MainContext } from "@context/index";
+import { setMembers, setTeam } from "@reducer/reducer";
 
 export default function Home() {
   const {

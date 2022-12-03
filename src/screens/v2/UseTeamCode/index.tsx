@@ -5,8 +5,8 @@ import { Container } from "./styles";
 import { BlackButton, TextInput } from "@components";
 
 import { showTeam } from "@requests/TeamRequests";
-import { MainContext } from "@context";
-import { setMembers, setTeam } from "@reducer";
+import { MainContext } from "@context/index";
+import { setMembers, setTeam } from "@reducer/reducer";
 
 export default function UseTeamCode() {
   const navigation = useNavigation();

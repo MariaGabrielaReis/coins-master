@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
 import { ButtonsContainer, Container, Content } from "./styles";
-import { Title, Subtitle, BlackButton, YellowButton } from "@components";
+import { Title, Subtitle, YellowButton } from "@components";
 
 export default function CoinsDistribution() {
   const navigation = useNavigation();
@@ -10,23 +10,16 @@ export default function CoinsDistribution() {
   return (
     <Container>
       <Content>
-        <Title>Você tem duas opções</Title>
+        <Title>Opa, calma lá...</Title>
         <Subtitle>
-          Avaliar em grupo significa se reunir em time e distribuir o total de
-          moedas entre a galera, já avaliar em anônimo, cada um distribui suas
-          moedas livremente e ao final das votações é gerada uma média geral
-          individual
+          A avaliação só pode ser enviada uma {"\n"} vez por sprint, então o
+          ideal é juntar {"\n"} a galera toda pra isso funcionar!
         </Subtitle>
 
         <ButtonsContainer>
-          <BlackButton
-            label={"AVALIAÇÃO EM GRUPO"}
-            onClick={() => navigation.navigate("BlockCoinsDistribution")}
-          />
           <YellowButton
-            isDisabled={true}
-            label={"AVALIAÇÃO ANÔNIMA"}
-            onClick={() => navigation.navigate("Sorry")}
+            label={"ESTAMOS PRONTOS!"}
+            onClick={() => navigation.navigate("Avaliation")}
           />
         </ButtonsContainer>
       </Content>

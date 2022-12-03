@@ -38,7 +38,7 @@ export default function Login() {
         onChange={name => setName(name)}
       />
       <YellowButton
-        label={isLoading ? "Aguarde..." : "CRIAR CONTINUAR"}
+        label={isLoading ? "Aguarde..." : "CONTINUAR"}
         isDisabled={isLoading}
         onClick={handleLogin}
       />

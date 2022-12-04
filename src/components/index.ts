@@ -6,6 +6,7 @@ import { TextInput } from "./inputs/TextInput";
 import { Dropdown } from "./inputs/Dropdown";
 import { OptionProps } from "./inputs/InputProps";
 
+import { AvaliationCard } from "./cards/AvaliationCard";
 import { Card } from "./cards/Card";
 import { Habilities } from "./cards/Habilities";
 
@@ -22,6 +23,7 @@ export {
   TopicTitle,
   TextInput,
   Dropdown,
+  AvaliationCard,
   Card,
   Habilities,
   BlackButton,

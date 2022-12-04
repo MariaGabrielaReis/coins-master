@@ -16,6 +16,7 @@ export type HomeStackNavigatorParamList = {
   CoinsDistribution: undefined;
   // BlockCoinsDistribution: undefined;
   Home: undefined;
+  Avaliation: undefined;
 };
 
 export type BottomTabNavigatorParamList = {

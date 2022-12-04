@@ -5,8 +5,8 @@ import { Container } from "./styles";
 import { BlackButton, TextInput, Habilities } from "@components";
 
 import { createTeam } from "@requests/TeamRequests";
-import { MainContext } from "@context/index";
-import { setTeam } from "@reducer/reducer";
+import { MainContext } from "@MainContext/index";
+import { setTeam } from "@MainContext/reducer";
 import { Team } from "@interfaces/Team";
 
 export default function CreateTeam() {

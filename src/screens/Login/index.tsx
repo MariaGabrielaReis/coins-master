@@ -6,8 +6,8 @@ import { YellowButton, TextInput } from "@components";
 
 import { createUser } from "@requests/UserRequests";
 import { User } from "@interfaces/User";
-import { MainContext } from "@context/index";
-import { setUser } from "@reducer/reducer";
+import { MainContext } from "@MainContext/index";
+import { setUser } from "@MainContext/reducer";
 
 export default function Login() {
   const {

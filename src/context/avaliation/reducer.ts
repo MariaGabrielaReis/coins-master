@@ -1,4 +1,4 @@
-import { AvaliationContextProps } from "../AvaliationContext";
+import { AvaliationContextProps } from "./";
 import {
   ActionTypes,
   AvaliationActions,
@@ -14,24 +14,28 @@ export function avaliationReducer(
 ): AvaliationContextProps {
   switch (action.type) {
     case ActionTypes.setCoins:
-      return { ...state, coins: action.payload };
+      return { ...state, coins: action.payload, coinsLeft: action.payload };
     case ActionTypes.setSprint:
       return { ...state, sprint: action.payload };
     case ActionTypes.createAvaliations:
       return { ...state, avaliations: action.payload };
     case ActionTypes.setAvaliation:
       const { cardIndex, abilityIndex, avaliationAction } = action.payload;
-      const avaliationsUpdated = [...state.avaliations];
-      avaliationsUpdated[cardIndex].map((ability, index) => {
-        if (index === abilityIndex)
-          avaliationAction === "plus" ? (ability += 1) : (ability -= 1);
-      });
-
+      let avaliationsUpdated = [...state.avaliations];
       let coinsOk = 0;
-      avaliationsUpdated.map(avaliation => {
-        avaliation.map(ability => (coinsOk += ability));
-      });
 
+      console.log("antes: ", JSON.stringify(avaliationsUpdated));
+      avaliationsUpdated = avaliationsUpdated.map((card, cardIndexMap) =>
+        card.map((ability, abilityIndexMap) => {
+          if (cardIndex === cardIndexMap && abilityIndexMap === abilityIndex) {
+            ability = avaliationAction === "plus" ? ability + 1 : ability - 1;
+          }
+          coinsOk = coinsOk + ability;
+          return ability;
+        }),
+      );
+
+      console.log("depois: ", JSON.stringify(avaliationsUpdated));
       return {
         ...state,
         avaliations: avaliationsUpdated,
@@ -44,7 +48,6 @@ export function avaliationReducer(
 }
 
 // helper functions to simplify the caller
-
 export const setAvaliationCoins = (coins: number): SetAvaliationCoins => ({
   type: ActionTypes.setCoins,
   payload: coins,

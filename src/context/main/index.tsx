@@ -2,8 +2,8 @@ import React from "react";
 import { Team } from "@interfaces/Team";
 import { User } from "@interfaces/User";
 import { createContext, Dispatch, useReducer } from "react";
-import { reducer } from "./reducers/reducer";
-import { TeamActions } from "./reducers/TeamActions";
+import { reducer } from "./reducer";
+import { TeamActions } from "./TeamActions";
 
 export type ContextProps = {
   team: Team | undefined;

@@ -19,8 +19,8 @@
       "@interfaces/*": ["./src/utils/interfaces/*"],
       "@api": ["./src/services/api"],
       "@requests/*": ["./src/utils/requests/*"],
-      "@context/*": ["./src/context/*"],
-      "@reducer/*": ["./src/context/reducers/*"]
+      "@MainContext/*": ["./src/context/main/*"],
+      "@AvaliationContext/*": ["./src/context/avaliation/*"]
     }
   }
 }

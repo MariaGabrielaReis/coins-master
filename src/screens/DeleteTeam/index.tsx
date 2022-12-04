@@ -5,8 +5,8 @@ import { Container, Content } from "./styles";
 import { Title, Subtitle, Illustration, BlackButton } from "@components";
 
 import { deleteTeam } from "@requests/TeamRequests";
-import { MainContext } from "@context/index";
-import { setMembers, setTeam, setUser } from "@reducer/reducer";
+import { MainContext } from "@MainContext/index";
+import { setMembers, setTeam, setUser } from "@MainContext/reducer";
 
 export default function DeleteTeam() {
   const navigation = useNavigation();

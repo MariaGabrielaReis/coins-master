@@ -1,7 +1,7 @@
 import React from "react";
 import { createContext, Dispatch, useReducer } from "react";
-import { AvaliationActions } from "./reducers/AvaliationActions";
-import { avaliationReducer } from "./reducers/avaliationReducer";
+import { AvaliationActions } from "./AvaliationActions";
+import { avaliationReducer } from "./reducer";
 
 type Avaliation = number[];
 
@@ -21,18 +21,21 @@ export const INITIAL_STATE: AvaliationContextProps = {
 
 const AvaliationContext = createContext<{
   state: AvaliationContextProps;
-  dispatch: Dispatch<AvaliationActions>;
-}>({ state: INITIAL_STATE, dispatch: () => undefined });
+  avaliationDispatch: Dispatch<AvaliationActions>;
+}>({ state: INITIAL_STATE, avaliationDispatch: () => undefined });
 
 type Props = {
   children: JSX.Element;
 };
 
 function AvaliationProvider({ children }: Props) {
-  const [state, dispatch] = useReducer(avaliationReducer, INITIAL_STATE);
+  const [state, avaliationDispatch] = useReducer(
+    avaliationReducer,
+    INITIAL_STATE,
+  );
 
   return (
-    <AvaliationContext.Provider value={{ state, dispatch }}>
+    <AvaliationContext.Provider value={{ state, avaliationDispatch }}>
       {children}
     </AvaliationContext.Provider>
   );

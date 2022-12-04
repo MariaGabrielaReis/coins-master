@@ -3,8 +3,8 @@ import { useNavigation } from "@react-navigation/native";
 
 import { Container } from "./styles";
 import { YellowButton, TextInput } from "@components";
-import { MainContext } from "@context/index";
-import { setTeamCoins } from "@reducer/reducer";
+import { MainContext } from "@MainContext/index";
+import { setTeamCoins } from "@MainContext/reducer";
 
 export default function AddCoins() {
   const { state, dispatch } = useContext(MainContext);

@@ -1,6 +1,6 @@
 import { Team } from "@interfaces/Team";
 import { User } from "@interfaces/User";
-import { ContextProps } from "../";
+import { ContextProps } from "./";
 import {
   ActionTypes,
   TeamActions,

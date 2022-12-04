@@ -2,8 +2,8 @@ import React from "react";
 
 import theme from "./src/global/styles/theme";
 import { ThemeProvider } from "styled-components";
-import { MainProvider } from "./src/context";
-import { AvaliationProvider } from "./src/context/AvaliationContext";
+import { MainProvider } from "./src/context/main";
+import { AvaliationProvider } from "./src/context/avaliation";
 
 import RootNavigator from "./src/routes";
 
